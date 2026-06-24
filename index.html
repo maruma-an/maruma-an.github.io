@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="奈良市の鍼灸マッサージ院「末摩庵（まるまあん）」。元小学校教諭の院長が、学校に行きづらさを抱えるお子さんと保護者を、東洋医学とアーユルヴェーダで心と体の両面からサポートします。">
+<meta name="keywords" content="奈良 鍼灸 不登校 小児はり 起立性調節障害 腹痛 頭痛 子ども 保護者 教育相談 アーユルヴェーダ 末摩庵 まるまあん">
+<meta property="og:title" content="末摩庵（まるまあん）｜奈良の鍼灸マッサージ院">
+<meta property="og:description" content="学校に行きづらさを抱えるお子さんと保護者のための、奈良の小さな専門院。元小学校教諭の院長が心と体の両面からサポートします。">
+<meta property="og:type" content="website">
+<title>末摩庵（まるまあん）｜はり・きゅう・マッサージ 奈良市</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   DESIGN TOKENS
+============================================ */
+:root {
+  --terracotta:    #C4603B;
+  --terracotta-dk: #A84E2E;
+  --cream:         #FAF6EC;
+  --cream-mid:     #F0E8D4;
+  --cream-dk:      #E4D8BE;
+  --forest:        #2D5016;
+  --forest-lt:     #3D6B20;
+  --gold:          #C8983A;
+  --gold-lt:       #E2BC6A;
+  --ink:           #211A12;
+  --ink-mid:       #3D3028;
+  --ink-soft:      #6B5A48;
+  --ink-mute:      #9C8C7A;
+
+  --serif:  'Noto Serif JP', 'Cormorant Garamond', serif;
+  --sans:   'Noto Sans JP', sans-serif;
+  --italic: 'Cormorant Garamond', serif;
+
+  --r-sm: 2px;
+  --r-md: 4px;
+
+  --ease: cubic-bezier(.22,.68,0,1.2);
+}
+
+/* ============================================
+   RESET & BASE
+============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ============================================
+   TYPOGRAPHY SCALE
+============================================ */
+.t-eyebrow {
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+.t-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: .06em;
+}
+.t-h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: .08em;
+}
+.t-h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+.t-body {
+  font-family: var(--sans);
+  font-size: .925rem;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: .04em;
+  color: var(--ink-mid);
+}
+.t-small {
+  font-size: .8rem;
+  letter-spacing: .05em;
+  color: var(--ink-soft);
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+============================================ */
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+.section { padding: clamp(64px, 10vw, 120px) 0; }
+.section--tight { padding: clamp(40px, 6vw, 72px) 0; }
+
+/* gold rule divider */
+.gold-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 20px 0;
+}
+.gold-rule--center { margin: 20px auto; }
+
+/* ============================================
+   NAV
+============================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px clamp(20px, 5vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(250, 246, 236, .92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s;
+}
+.nav.scrolled { border-bottom-color: var(--cream-dk); }
+
+.nav__logo {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  color: var(--forest);
+  line-height: 1.3;
+}
+.nav__logo span {
+  display: block;
+  font-family: var(--sans);
+  font-size: .65rem;
+  letter-spacing: .2em;
+  color: var(--ink-mute);
+  margin-top: 1px;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 36px);
+}
+.nav__links a {
+  font-size: .78rem;
+  letter-spacing: .12em;
+  color: var(--ink-soft);
+  transition: color .2s;
+}
+.nav__links a:hover { color: var(--terracotta); }
+
+.nav__cta {
+  background: var(--terracotta);
+  color: #fff !important;
+  padding: 8px 20px;
+  font-size: .75rem !important;
+  letter-spacing: .14em !important;
+  transition: background .2s !important;
+}
+.nav__cta:hover { background: var(--terracotta-dk) !important; }
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav__toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: all .3s;
+}
+
+/* mobile nav */
+.nav__mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: 99;
+  padding: 100px 40px 40px;
+  flex-direction: column;
+  gap: 28px;
+}
+.nav__mobile.open { display: flex; }
+.nav__mobile a {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  letter-spacing: .12em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--cream-dk);
+  padding-bottom: 20px;
+}
+
+/* ============================================
+   HERO
+============================================ */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 72px;
+  overflow: hidden;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px clamp(20px, 5vw, 72px);
+  position: relative;
+  z-index: 2;
+}
+
+.hero__voices {
+  margin-bottom: 36px;
+}
+.hero__voice {
+  font-family: var(--serif);
+  font-size: clamp(.9rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  color: var(--ink-soft);
+  letter-spacing: .06em;
+  line-height: 2.2;
+  padding-left: 16px;
+  border-left: 2px solid var(--cream-dk);
+  margin-bottom: 8px;
+}
+
+.hero__kicker {
+  font-family: var(--sans);
+  font-size: .7rem;
+  letter-spacing: .25em;
+  color: var(--terracotta);
+  margin-bottom: 16px;
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.75;
+  letter-spacing: .07em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.hero__title em {
+  font-style: normal;
+  color: var(--forest);
+}
+
+.hero__desc {
+  font-family: var(--sans);
+  font-size: .88rem;
+  font-weight: 300;
+  line-height: 2.1;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  padding: 13px 28px;
+  cursor: pointer;
+  transition: all .25s;
+  border: none;
+  text-decoration: none;
+}
+.btn--primary {
+  background: var(--terracotta);
+  color: #fff;
+}
+.btn--primary:hover { background: var(--terracotta-dk); transform: translateY(-1px); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--forest);
+  border: 1px solid var(--forest);
+}
+.btn--outline:hover { background: var(--forest); color: #fff; transform: translateY(-1px); }
+
+.btn--gold {
+  background: var(--gold);
+  color: #fff;
+}
+.btn--gold:hover { background: #B8882A; transform: translateY(-1px); }
+
+.hero__image {
+  position: relative;
+  background: var(--cream-mid);
+  overflow: hidden;
+}
+.hero__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(45,80,22,.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(196,96,59,.08) 0%, transparent 55%);
+}
+/* botanical SVG overlay */
+.hero__botanical {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   CONCEPTS (3 pillars)
+============================================ */
+.concepts {
+  background: var(--forest);
+  color: var(--cream);
+}
+.concepts__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,.12);
+}
+.concept-card {
+  background: var(--forest);
+  padding: clamp(32px, 5vw, 56px) clamp(24px, 4vw, 44px);
+  position: relative;
+  overflow: hidden;
+}
+.concept-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+.concept-card:hover::before { transform: scaleX(1); }
+
+.concept-card__num {
+  font-family: var(--italic);
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.1);
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: -.02em;
+}
+.concept-card__title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  color: var(--gold-lt);
+  margin-bottom: 14px;
+}
+.concept-card__text {
+  font-family: var(--sans);
+  font-size: .82rem;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: .04em;
+  color: rgba(250,246,236,.72);
+}
+
+/* ============================================
+   PHILOSOPHY
+============================================ */
+.philosophy__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.philosophy__visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--cream-mid);
+  overflow: hidden;
+}
+.philosophy__visual-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.philosophy__content { padding: 20px 0; }
+.philosophy__quote {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  line-height: 2.1;
+  letter-spacing: .08em;
+  color: var(--ink);
+  margin: 28px 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--gold);
+}
+
+/* ============================================
+   FOR CHILDREN / FOR PARENTS (tabs)
+============================================ */
+.for-whom { background: var(--cream-mid); }
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--cream-dk);
+}
+.tab {
+  flex: 1;
+  padding: 16px 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: .92rem;
+  letter-spacing: .12em;
+  color: var(--ink-mute);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all .25s;
+}
+.tab.active {
+  color: var(--terracotta);
+  border-bottom-color: var(--terracotta);
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.tab-content__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+}
+.symptom-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 24px;
+}
+.symptom-item {
+  background: var(--cream);
+  padding: 12px 16px;
+  font-size: .82rem;
+  letter-spacing: .05em;
+  color: var(--ink-mid);
+  border-left: 2px solid var(--terracotta);
+  line-height: 1.6;
+}
+
+/* ============================================
+   SERVICES
+============================================ */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.service-card {
+  background: var(--cream-mid);
+  padding: 28px 22px;
+  border-top: 2px solid var(--cream-dk);
+  transition: border-color .25s, transform .25s;
+}
+.service-card:hover {
+  border-top-color: var(--terracotta);
+  transform: translateY(-3px);
+}
+.service-card__icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+  color: var(--terracotta);
+}
+.service-card__title {
+  font-family: var(--serif);
+  font-size: .95rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.service-card__text {
+  font-size: .78rem;
+  line-height: 1.9;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+
+/* ============================================
+   PRICING
+============================================ */
+.pricing { background: var(--ink); color: var(--cream); }
+.pricing .t-eyebrow { color: var(--gold-lt); }
+.pricing .t-h2 { color: var(--cream); }
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+  background: rgba(255,255,255,.06);
+}
+.price-card {
+  background: var(--ink);
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 36px);
+  position: relative;
+  transition: background .25s;
+}
+.price-card--featured { background: var(--terracotta); }
+.price-card--featured .price-card__tag { display: flex; }
+
+.price-card__tag {
+  display: none;
+  position: absolute;
+  top: -1px; right: 20px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: .65rem;
+  font-weight: 400;
+  letter-spacing: .16em;
+  padding: 4px 12px;
+}
+.price-card__duration {
+  font-family: var(--sans);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  color: rgba(250,246,236,.5);
+  margin-bottom: 12px;
+}
+.price-card--featured .price-card__duration { color: rgba(255,255,255,.7); }
+
+.price-card__price {
+  font-family: var(--italic);
+  font-size: 2.8rem;
+  font-weight: 300;
+  letter-spacing: -.01em;
+  line-height: 1;
+  color: var(--gold-lt);
+  margin-bottom: 4px;
+}
+.price-card--featured .price-card__price { color: #fff; }
+
+.price-card__unit {
+  font-size: .75rem;
+  letter-spacing: .1em;
+  color: rgba(250,246,236,.4);
+  margin-bottom: 20px;
+}
+.price-card__name {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+.price-card__desc {
+  font-size: .78rem;
+  font-weight: 300;
+  line-height: 1.95;
+  letter-spacing: .04em;
+  color: rgba(250,246,236,.6);
+}
+.price-card--featured .price-card__desc { color: rgba(255,255,255,.8); }
+
+.pricing__note {
+  margin-top: 32px;
+  padding: 20px 28px;
+  border: 1px solid rgba(255,255,255,.1);
+  font-size: .8rem;
+  line-height: 2;
+  color: rgba(250,246,236,.55);
+  letter-spacing: .04em;
+}
+
+.pricing__free {
+  margin-top: 48px;
+  border: 1px solid var(--gold);
+  padding: clamp(28px, 4vw, 48px);
+  text-align: center;
+  position: relative;
+}
+.pricing__free-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--ink);
+  font-size: .7rem;
+  font-weight: 400;
+  letter-spacing: .2em;
+  padding: 5px 20px;
+  white-space: nowrap;
+}
+.pricing__free-title {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 300;
+  letter-spacing: .1em;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+.pricing__free-desc {
+  font-size: .85rem;
+  font-weight: 300;
+  line-height: 2.1;
+  color: rgba(250,246,236,.65);
+  letter-spacing: .05em;
+  max-width: 560px;
+  margin: 0 auto 28px;
+}
+.pricing__free-list {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.pricing__free-item {
+  font-size: .78rem;
+  letter-spacing: .1em;
+  color: var(--gold-lt);
+}
+.pricing__free-item::before {
+  content: '◇ ';
+  opacity: .6;
+}
+
+/* ============================================
+   MENU (施術メニュー詳細)
+============================================ */
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--cream-dk);
+  margin-top: 40px;
+  border: 1px solid var(--cream-dk);
+}
+.menu-item {
+  background: var(--cream);
+  padding: 24px 28px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.menu-item__num {
+  font-family: var(--italic);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--cream-dk);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: right;
+}
+.menu-item__body {}
+.menu-item__title {
+  font-family: var(--serif);
+  font-size: .95rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: var(--forest);
+  margin-bottom: 6px;
+}
+.menu-item__text {
+  font-size: .78rem;
+  line-height: 1.9;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+
+/* ============================================
+   PROFILE
+============================================ */
+.profile { background: var(--cream-mid); }
+.profile__inner {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+.profile__photo-wrap {
+  position: relative;
+}
+.profile__photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--cream-dk);
+  overflow: hidden;
+  position: relative;
+}
+.profile__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.profile__photo-caption {
+  margin-top: 12px;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: .78rem;
+  letter-spacing: .15em;
+  color: var(--ink-soft);
+}
+.profile__name {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 300;
+  letter-spacing: .12em;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.profile__name-ruby {
+  font-size: .75rem;
+  letter-spacing: .2em;
+  color: var(--ink-mute);
+  margin-bottom: 20px;
+}
+.profile__licenses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.license-tag {
+  border: 1px solid var(--forest);
+  color: var(--forest);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  padding: 4px 12px;
+}
+.profile__story {
+  font-size: .88rem;
+  font-weight: 300;
+  line-height: 2.1;
+  letter-spacing: .04em;
+  color: var(--ink-mid);
+  margin-bottom: 20px;
+}
+.profile__history {
+  margin-top: 28px;
+  border-top: 1px solid var(--cream-dk);
+  padding-top: 24px;
+}
+.history-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 8px 16px;
+  margin-bottom: 10px;
+  font-size: .8rem;
+  letter-spacing: .04em;
+  line-height: 1.8;
+}
+.history-year { color: var(--ink-mute); }
+.history-text { color: var(--ink-mid); }
+
+/* ============================================
+   FAQ
+============================================ */
+.faq__list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.faq-item {
+  border-top: 1px solid var(--cream-dk);
+}
+.faq-item:last-child { border-bottom: 1px solid var(--cream-dk); }
+.faq-q {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-q__mark {
+  font-family: var(--italic);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--terracotta);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.faq-q__text {
+  font-family: var(--serif);
+  font-size: .92rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+  color: var(--ink);
+  flex: 1;
+  line-height: 1.7;
+}
+.faq-q__toggle {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  margin-top: 3px;
+  color: var(--ink-mute);
+  transition: transform .3s;
+}
+.faq-q__toggle::before,
+.faq-q__toggle::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  transition: opacity .3s;
+}
+.faq-q__toggle::before {
+  width: 1px; height: 14px;
+  top: 2px; left: 8.5px;
+}
+.faq-q__toggle::after {
+  width: 14px; height: 1px;
+  top: 8.5px; left: 2px;
+}
+.faq-item.open .faq-q__toggle::before { opacity: 0; }
+.faq-a {
+  display: none;
+  padding: 0 0 20px 38px;
+  font-size: .85rem;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ============================================
+   ACCESS
+============================================ */
+.access { background: var(--cream-mid); }
+.access__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+.access__map {
+  aspect-ratio: 4/3;
+  background: var(--cream-dk);
+  overflow: hidden;
+}
+.access__map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(.2);
+}
+.access__info { padding-top: 4px; }
+.access-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+.access-table tr {
+  border-bottom: 1px solid var(--cream-dk);
+}
+.access-table td {
+  padding: 12px 0;
+  font-size: .83rem;
+  letter-spacing: .04em;
+  line-height: 1.8;
+  vertical-align: top;
+}
+.access-table td:first-child {
+  font-family: var(--serif);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  color: var(--ink-mute);
+  width: 80px;
+  padding-right: 16px;
+  white-space: nowrap;
+}
+.access-table td:last-child { color: var(--ink-mid); }
+.access-table a { color: var(--terracotta); text-decoration: underline; }
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-size: .83rem;
+  letter-spacing: .04em;
+  color: var(--ink-mid);
+}
+.hours-day { font-family: var(--serif); color: var(--ink-mute); }
+
+/* ============================================
+   RESERVATION (予約フォーム)
+============================================ */
+.reservation { background: var(--forest); color: var(--cream); }
+.reservation .t-eyebrow { color: var(--gold-lt); }
+.reservation .t-h2 { color: var(--cream); }
+.reservation .gold-rule { background: var(--gold); }
+
+.reservation__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  margin-top: 48px;
+}
+
+.reservation__info { color: rgba(250,246,236,.75); font-size: .85rem; line-height: 2.1; letter-spacing: .04em; }
+.reservation__info h3 {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: var(--cream);
+  margin: 24px 0 10px;
+}
+.reservation__info h3:first-child { margin-top: 0; }
+.reservation__contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255,255,255,.15);
+  font-size: .82rem;
+  letter-spacing: .08em;
+  color: rgba(250,246,236,.8);
+  transition: all .25s;
+}
+.contact-link:hover {
+  background: rgba(255,255,255,.06);
+  border-color: var(--gold);
+  color: var(--cream);
+}
+.contact-link__icon { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* form */
+.res-form { display: flex; flex-direction: column; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label {
+  font-size: .75rem;
+  letter-spacing: .14em;
+  color: rgba(250,246,236,.6);
+}
+.form-label .req {
+  color: var(--gold-lt);
+  margin-left: 4px;
+}
+.form-input,
+.form-select,
+.form-textarea {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.15);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: .85rem;
+  font-weight: 300;
+  letter-spacing: .04em;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color .2s;
+  -webkit-appearance: none;
+  width: 100%;
+}
+.form-input::placeholder,
+.form-textarea::placeholder { color: rgba(250,246,236,.3); }
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus { border-color: var(--gold); }
+.form-select { cursor: pointer; }
+.form-select option { background: #2a3d18; color: var(--cream); }
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-note {
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: rgba(250,246,236,.4);
+  line-height: 1.8;
+}
+.form-submit {
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: .82rem;
+  font-weight: 400;
+  letter-spacing: .18em;
+  padding: 15px;
+  cursor: pointer;
+  border: none;
+  transition: background .25s, transform .2s;
+  margin-top: 4px;
+}
+.form-submit:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+/* ============================================
+   LINE BANNER
+============================================ */
+.line-banner {
+  background: #00B900;
+  padding: 20px clamp(20px, 5vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-decoration: none;
+  transition: filter .2s;
+}
+.line-banner:hover { filter: brightness(.92); }
+.line-banner__text {
+  font-family: var(--sans);
+  font-size: .88rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: #fff;
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.footer {
+  background: var(--ink);
+  color: rgba(250,246,236,.45);
+  padding: 48px clamp(20px, 5vw, 60px) 32px;
+}
+.footer__inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: end;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding-bottom: 32px;
+  margin-bottom: 24px;
+}
+.footer__logo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: .15em;
+  color: rgba(250,246,236,.8);
+  margin-bottom: 8px;
+}
+.footer__addr {
+  font-size: .75rem;
+  line-height: 1.9;
+  letter-spacing: .06em;
+}
+.footer__links {
+  display: flex;
+  gap: 20px;
+}
+.footer__links a {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  transition: color .2s;
+}
+.footer__links a:hover { color: rgba(250,246,236,.8); }
+.footer__copy {
+  max-width: 1040px;
+  margin: 0 auto;
+  font-size: .7rem;
+  letter-spacing: .1em;
+}
+
+/* ============================================
+   FLOATING CTA
+============================================ */
+.floating-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all .4s var(--ease);
+}
+.floating-cta.visible { transform: translateY(0); opacity: 1; }
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-family: var(--sans);
+  font-size: .75rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  cursor: pointer;
+  transition: transform .2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,.18);
+  text-decoration: none;
+}
+.floating-btn:hover { transform: translateY(-2px); }
+.floating-btn--reserve {
+  background: var(--terracotta);
+  color: #fff;
+}
+.floating-btn--line {
+  background: #00B900;
+  color: #fff;
+}
+
+/* ============================================
+   BOTANICAL SVG (decorative)
+============================================ */
+.botanical-bg {
+  position: absolute;
+  pointer-events: none;
+  opacity: .07;
+}
+
+/* ============================================
+   ANIMATIONS
+============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero__image { min-height: 340px; order: -1; }
+  .concepts__grid { grid-template-columns: 1fr; }
+  .philosophy__inner { grid-template-columns: 1fr; }
+  .philosophy__visual { aspect-ratio: 16/9; }
+  .tab-content__grid { grid-template-columns: 1fr; }
+  .services__grid { grid-template-columns: 1fr 1fr; }
+  .pricing__grid { grid-template-columns: 1fr; }
+  .profile__inner { grid-template-columns: 1fr; }
+  .profile__photo { max-width: 280px; }
+  .access__inner { grid-template-columns: 1fr; }
+  .reservation__grid { grid-template-columns: 1fr; }
+  .menu__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .nav__links { display: none; }
+  .nav__toggle { display: flex; }
+  .services__grid { grid-template-columns: 1fr; }
+  .symptom-list { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .footer__inner { grid-template-columns: 1fr; }
+  .floating-cta { bottom: 16px; right: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav__logo">
+    末摩庵
+    <span>まるまあん</span>
+  </a>
+  <div class="nav__links">
+    <a href="#about">院長</a>
+    <a href="#services">施術</a>
+    <a href="#pricing">料金</a>
+    <a href="#access">アクセス</a>
+    <a href="#faq">FAQ</a>
+    <a href="#reservation" class="nav__cta btn">予約する</a>
+  </div>
+  <div class="nav__toggle" id="navToggle" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- mobile nav -->
+<nav class="nav__mobile" id="navMobile">
+  <a href="#about" onclick="closeMobileNav()">院長について</a>
+  <a href="#services" onclick="closeMobileNav()">施術内容</a>
+  <a href="#pricing" onclick="closeMobileNav()">料金</a>
+  <a href="#access" onclick="closeMobileNav()">アクセス</a>
+  <a href="#faq" onclick="closeMobileNav()">よくあるご質問</a>
+  <a href="#reservation" onclick="closeMobileNav()" style="color:var(--terracotta);">予約・お問い合わせ</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__text">
+    <div class="hero__voices">
+      <div class="hero__voice">「学校、行きたくない」</div>
+      <div class="hero__voice">「子どもの様子がいつもと違う気がする」</div>
+      <div class="hero__voice">「誰に相談すればいいか分からない」</div>
+    </div>
+
+    <div class="hero__kicker">はり・きゅう・マッサージ　末摩庵（奈良）</div>
+    <h1 class="hero__title">
+      子どもと家族の<br>
+      心と体を<br>
+      <em>まるごとケア</em>
+    </h1>
+    <p class="hero__desc">
+      元小学校教諭であり鍼灸マッサージ師である院長が、<br>
+      学校に行きづらさを抱えるお子さんと<br>
+      保護者の方のために開いた、奈良の小さな専門院です。
+    </p>
+    <div class="hero__actions">
+      <a href="#reservation" class="btn btn--primary">予約・相談する</a>
+      <a href="#about" class="btn btn--outline">院長について</a>
+    </div>
+  </div>
+
+  <div class="hero__image">
+    <!-- Botanical decorative SVG -->
+    <div class="hero__botanical">
+      <svg width="380" height="520" viewBox="0 0 380 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- central stem -->
+        <line x1="190" y1="500" x2="190" y2="80" stroke="#2D5016" stroke-width="1.5" opacity=".18"/>
+        <!-- branches -->
+        <line x1="190" y1="400" x2="80" y2="290" stroke="#2D5016" stroke-width="1" opacity=".15"/>
+        <line x1="190" y1="360" x2="295" y2="260" stroke="#2D5016" stroke-width="1" opacity=".15"/>
+        <line x1="190" y1="310" x2="70" y2="210" stroke="#2D5016" stroke-width="1" opacity=".13"/>
+        <line x1="190" y1="270" x2="305" y2="178" stroke="#2D5016" stroke-width="1" opacity=".13"/>
+        <line x1="190" y1="220" x2="100" y2="140" stroke="#2D5016" stroke-width="1" opacity=".11"/>
+        <line x1="190" y1="180" x2="280" y2="108" stroke="#2D5016" stroke-width="1" opacity=".11"/>
+        <!-- leaves -->
+        <ellipse cx="80" cy="290" rx="36" ry="18" fill="#2D5016" opacity=".12" transform="rotate(-35 80 290)"/>
+        <ellipse cx="295" cy="260" rx="36" ry="18" fill="#2D5016" opacity=".12" transform="rotate(25 295 260)"/>
+        <ellipse cx="70" cy="210" rx="34" ry="16" fill="#2D5016" opacity=".10" transform="rotate(-40 70 210)"/>
+        <ellipse cx="305" cy="178" rx="34" ry="16" fill="#2D5016" opacity=".10" transform="rotate(30 305 178)"/>
+        <ellipse cx="100" cy="140" rx="30" ry="15" fill="#2D5016" opacity=".09" transform="rotate(-38 100 140)"/>
+        <ellipse cx="280" cy="108" rx="30" ry="15" fill="#2D5016" opacity=".09" transform="rotate(28 280 108)"/>
+        <!-- top leaf pair -->
+        <ellipse cx="168" cy="88" rx="26" ry="13" fill="#2D5016" opacity=".12" transform="rotate(-15 168 88)"/>
+        <ellipse cx="214" cy="80" rx="26" ry="13" fill="#2D5016" opacity=".12" transform="rotate(15 214 80)"/>
+        <!-- terracotta accent dots -->
+        <circle cx="190" cy="500" r="3" fill="#C4603B" opacity=".2"/>
+        <circle cx="190" cy="80" r="4" fill="#C4603B" opacity=".18"/>
+        <!-- gold accent line -->
+        <line x1="40" y1="60" x2="340" y2="60" stroke="#C8983A" stroke-width=".5" opacity=".2"/>
+        <line x1="40" y1="510" x2="340" y2="510" stroke="#C8983A" stroke-width=".5" opacity=".2"/>
+      </svg>
+    </div>
+
+    <!-- clinic info overlay -->
+    <div style="position:absolute;bottom:32px;left:32px;right:32px;z-index:2;">
+      <div style="background:rgba(250,246,236,.88);backdrop-filter:blur(8px);padding:20px 24px;">
+        <div style="font-family:var(--serif);font-size:.72rem;letter-spacing:.2em;color:var(--ink-mute);margin-bottom:8px;">OPEN HOURS</div>
+        <div style="display:grid;grid-template-columns:60px 1fr;gap:4px 12px;font-size:.8rem;letter-spacing:.05em;color:var(--ink-mid);">
+          <span style="color:var(--ink-mute);font-family:var(--serif);">土曜</span><span>14:00 〜 18:00</span>
+          <span style="color:var(--ink-mute);font-family:var(--serif);">日・月曜</span><span>10:00 〜 18:00</span>
+        </div>
+        <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--cream-dk);font-size:.72rem;letter-spacing:.08em;color:var(--terracotta);">完全予約制　奈良市法蓮町</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 CONCEPTS ============ -->
+<section class="concepts">
+  <div class="container" style="padding-top:clamp(48px,7vw,80px);padding-bottom:clamp(48px,7vw,80px);">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="t-eyebrow" style="color:rgba(212,184,100,.75);">末摩庵の3つの柱</div>
+    </div>
+  </div>
+  <div class="concepts__grid">
+    <div class="concept-card reveal">
+      <div class="concept-card__num">01</div>
+      <div class="concept-card__title">やさしい東洋医学</div>
+      <div class="concept-card__text">刺さない小児はりと、やわらかいマッサージで、お子さんの体の緊張を少しずつほぐします。初めての方でも安心してご来院いただけます。</div>
+    </div>
+    <div class="concept-card reveal reveal-delay-1">
+      <div class="concept-card__num">02</div>
+      <div class="concept-card__title">アーユルヴェーダの知恵</div>
+      <div class="concept-card__text">インド伝統医学の体質（ドーシャ）理論を取り入れ、一人ひとりの心身のバランスを丁寧に整えます。インド直輸入の天然オイルを使用。</div>
+    </div>
+    <div class="concept-card reveal reveal-delay-2">
+      <div class="concept-card__num">03</div>
+      <div class="concept-card__title">元教諭による教育相談</div>
+      <div class="concept-card__text">14年間の教育現場経験を持つ院長が、保護者の方のお話をじっくりと伺います。「どう関わればいいか」「これからどうすれば」を一緒に考えます。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section class="section philosophy" id="philosophy">
+  <div class="container">
+    <div class="philosophy__inner">
+      <div class="philosophy__visual reveal">
+        <div class="philosophy__visual-inner">
+          <svg width="260" height="320" viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="30" width="200" height="260" stroke="#C8983A" stroke-width=".5" opacity=".3"/>
+            <rect x="20" y="20" width="200" height="260" stroke="#C8983A" stroke-width=".3" opacity=".2"/>
+            <line x1="130" y1="280" x2="130" y2="60" stroke="#2D5016" stroke-width="1.2" opacity=".25"/>
+            <line x1="130" y1="200" x2="48" y2="122" stroke="#2D5016" stroke-width=".8" opacity=".2"/>
+            <line x1="130" y1="170" x2="210" y2="100" stroke="#2D5016" stroke-width=".8" opacity=".2"/>
+            <line x1="130" y1="240" x2="52" y2="170" stroke="#2D5016" stroke-width=".8" opacity=".18"/>
+            <line x1="130" y1="130" x2="55" y2="68" stroke="#2D5016" stroke-width=".8" opacity=".16"/>
+            <line x1="130" y1="110" x2="205" y2="58" stroke="#2D5016" stroke-width=".8" opacity=".16"/>
+            <ellipse cx="48" cy="122" rx="28" ry="14" fill="#2D5016" opacity=".18" transform="rotate(-35 48 122)"/>
+            <ellipse cx="210" cy="100" rx="28" ry="14" fill="#2D5016" opacity=".18" transform="rotate(30 210 100)"/>
+            <ellipse cx="52" cy="170" rx="24" ry="12" fill="#2D5016" opacity=".15" transform="rotate(-38 52 170)"/>
+            <ellipse cx="55" cy="68" rx="22" ry="11" fill="#2D5016" opacity=".14" transform="rotate(-32 55 68)"/>
+            <ellipse cx="205" cy="58" rx="22" ry="11" fill="#2D5016" opacity=".14" transform="rotate(28 205 58)"/>
+            <text x="130" y="302" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11" fill="#C8983A" opacity=".5" letter-spacing="4">MARUMA - AN</text>
+          </svg>
+        </div>
+      </div>
+      <div class="philosophy__content reveal reveal-delay-1">
+        <div class="t-eyebrow">末摩庵が大切にしていること</div>
+        <div class="gold-rule"></div>
+        <h2 class="t-h2">急がず、焦らず、<br>その子のペースで</h2>
+        <blockquote class="philosophy__quote">
+          学校に戻ることだけを<br>
+          唯一の目標にはしません。
+        </blockquote>
+        <p class="t-body">
+          まずは心と体の緊張を少しずつほどき、親子が安心して過ごせること。そして、その上で「これからどうしていくか」を落ち着いて考えられることを大切にしています。
+        </p>
+        <p class="t-body" style="margin-top:16px;">
+          学びの形は一つではありません。今の学校との関わり方を見直すことや、別の学び方・過ごし方を考えることも含めて、その子に合った道を一緒に探していきます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOR WHOM ============ -->
+<section class="section for-whom" id="for-whom">
+  <div class="container">
+    <div class="t-eyebrow" style="text-align:center;">末摩庵でできること</div>
+    <div class="gold-rule gold-rule--center"></div>
+    <h2 class="t-h2" style="text-align:center;" >お子さんと保護者、<br>それぞれに寄り添います</h2>
+
+    <div style="margin-top:48px;">
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('child',this)">お子さんへのアプローチ</div>
+        <div class="tab" onclick="switchTab('parent',this)">保護者の方へ</div>
+      </div>
+
+      <div class="tab-content active" id="tab-child">
+        <div class="tab-content__grid">
+          <div>
+            <h3 class="t-h3" style="margin-bottom:14px;">こんな症状・状態のお子さんへ</h3>
+            <div class="symptom-list">
+              <div class="symptom-item">朝の腹痛・頭痛</div>
+              <div class="symptom-item">起立性調節障害</div>
+              <div class="symptom-item">眠れない・眠りが浅い</div>
+              <div class="symptom-item">食欲がわかない</div>
+              <div class="symptom-item">体の緊張・こわばり</div>
+              <div class="symptom-item">イライラ・過敏</div>
+              <div class="symptom-item">何も話したくない</div>
+              <div class="symptom-item">学校での緊張感</div>
+            </div>
+          </div>
+          <div>
+            <h3 class="t-h3" style="margin-bottom:14px;">施術で期待できる変化</h3>
+            <p class="t-body">
+              刺さない鍼とやさしいマッサージで体の緊張が少しずつゆるんでくると、こんな変化がみられるようになります。
+            </p>
+            <ul style="margin-top:16px;display:flex;flex-direction:column;gap:10px;">
+              <li class="t-body" style="display:flex;gap:10px;align-items:flex-start;">
+                <span style="color:var(--terracotta);flex-shrink:0;margin-top:2px;">◇</span>
+                <span>表情がやわらぎ、言葉が出てくるようになる</span>
+              </li>
+              <li class="t-body" style="display:flex;gap:10px;align-items:flex-start;">
+                <span style="color:var(--terracotta);flex-shrink:0;margin-top:2px;">◇</span>
+                <span>眠りや食欲が少しずつ整ってくる</span>
+              </li>
+              <li class="t-body" style="display:flex;gap:10px;align-items:flex-start;">
+                <span style="color:var(--terracotta);flex-shrink:0;margin-top:2px;">◇</span>
+                <span>自分のペースで「これから」を考えられるようになる</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-parent">
+        <div class="tab-content__grid">
+          <div>
+            <h3 class="t-h3" style="margin-bottom:14px;">一人で抱え込まないでください</h3>
+            <div style="border-left:2px solid var(--gold);padding-left:18px;margin-bottom:20px;">
+              <p class="t-body">「このままで大丈夫なのだろうか」</p>
+              <p class="t-body">「休ませていいのか、促した方がいいのか」</p>
+              <p class="t-body">「親として何が正しいのかわからない」</p>
+            </div>
+            <p class="t-body">そんな思いを一人で抱え続けておられる方も多いです。末摩庵では、保護者の方ご自身にも安心して話せる時間を持っていただきたいと考えています。</p>
+          </div>
+          <div>
+            <h3 class="t-h3" style="margin-bottom:14px;">保護者の方ご自身のケアも</h3>
+            <ul style="display:flex;flex-direction:column;gap:10px;">
+              <li class="t-body" style="display:flex;gap:10px;align-items:flex-start;">
+                <span style="color:var(--forest);flex-shrink:0;margin-top:2px;">◇</span>
+                <span>鍼灸施術・オイルマッサージで心身を整える</span>
+              </li>
+              <li class="t-body" style="display:flex;gap:10px;align-items:flex-start;">
+                <span style="color:var(--forest);flex-shrink:0;margin-top:2px;">◇</span>
+                <span>教育相談でお子さんとの関わり方を一緒に考える</span>
+              </li>
+              <li class="t-body" style="display:flex;gap:10px;align-items:flex-start;">
+                <span style="color:var(--forest);flex-shrink:0;margin-top:2px;">◇</span>
+                <span>「どうすればいいかわからない」から「今できることを考えよう」へ</span>
+              </li>
+              <li class="t-body" style="display:flex;gap:10px;align-items:flex-start;">
+                <span style="color:var(--forest);flex-shrink:0;margin-top:2px;">◇</span>
+                <span><strong style="font-weight:500;">お子さんを連れてこなくても大丈夫。まず親御さんだけでご来院できます。</strong></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="t-eyebrow">施術メニュー</div>
+    <div class="gold-rule"></div>
+    <h2 class="t-h2">末摩庵でできる施術</h2>
+    <div class="services__grid">
+      <div class="service-card reveal">
+        <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M18 6 C10 6 6 12 6 18 C6 26 12 30 18 30 C24 30 30 26 30 18 C30 12 26 6 18 6Z" opacity=".3"/>
+          <path d="M18 10 C14 10 11 13 11 18 C11 23 14 26 18 26" stroke-linecap="round"/>
+          <line x1="18" y1="14" x2="18" y2="22" stroke-linecap="round"/>
+        </svg>
+        <div class="service-card__title">小児はり</div>
+        <div class="service-card__text">刺さない専用の器具で皮膚をそっとさするだけ。お子さんの自律神経を整え、体の緊張をほぐします。</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 26 Q12 16 18 12 Q24 8 28 14 Q32 20 26 24 Q20 28 14 28Z" opacity=".3"/>
+          <path d="M12 24 Q16 16 22 14" stroke-linecap="round"/>
+          <circle cx="24" cy="12" r="3" opacity=".6"/>
+        </svg>
+        <div class="service-card__title">鍼灸施術</div>
+        <div class="service-card__text">細い鍼と心地よい温感のお灸で、体の内側から調えます。初めての方も安心してお受けいただけます。</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M8 28 Q14 16 20 12 Q24 10 26 14 Q28 18 24 22 Q20 26 16 28Z" opacity=".3"/>
+          <path d="M10 26 C14 20 18 16 22 14" stroke-linecap="round"/>
+          <path d="M14 28 C18 24 22 20 24 16" stroke-linecap="round" opacity=".5"/>
+        </svg>
+        <div class="service-card__title">マッサージ・指圧</div>
+        <div class="service-card__text">心地よい圧で全身を丁寧にほぐします。お子さんから大人まで、その日の体の状態に合わせてご提案します。</div>
+      </div>
+      <div class="service-card reveal">
+        <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+          <ellipse cx="18" cy="20" rx="10" ry="8" opacity=".3"/>
+          <path d="M12 20 Q16 12 20 10 Q24 8 26 14" stroke-linecap="round"/>
+          <path d="M10 22 Q14 16 18 14" stroke-linecap="round" opacity=".5"/>
+        </svg>
+        <div class="service-card__title">オイルマッサージ</div>
+        <div class="service-card__text">インド直輸入の上質な天然ハーブオイルを使ったアーユルヴェーダ式マッサージ。敏感な肌にも安心です。</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="18" cy="18" r="10" opacity=".2"/>
+          <path d="M18 8 Q24 12 24 18 Q24 24 18 28 Q12 24 12 18 Q12 12 18 8Z" opacity=".4"/>
+          <circle cx="18" cy="18" r="4"/>
+        </svg>
+        <div class="service-card__title">キリ温熱療法</div>
+        <div class="service-card__text">ハーブボウル「キリ」を使った温熱療法。オイルマッサージと組み合わせることで深い温かさをお届けします。</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M10 28 L18 10 L26 28" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/>
+          <path d="M13 22 L18 10 L23 22" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="18" y1="10" x2="18" y2="6" stroke-linecap="round"/>
+        </svg>
+        <div class="service-card__title">教育相談</div>
+        <div class="service-card__text">元小学校教諭の院長が、施術中も施術後も、お子さんや保護者のご相談にじっくりと向き合います。</div>
+      </div>
+      <div class="service-card reveal" style="grid-column:span 2;">
+        <svg class="service-card__icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="8" y="10" width="20" height="16" rx="2" opacity=".3"/>
+          <path d="M12 16 L16 20 L24 12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="service-card__title">温熱指圧（温罨法）</div>
+        <div class="service-card__text">特別な温熱瓦を使用して、冷えとコリに深くアプローチします。じんわりと温まる心地よさです。</div>
+      </div>
+    </div>
+    <p class="t-small" style="margin-top:20px;padding-left:4px;">※当日のお身体の状態やご希望に応じて、上記の中からご提案いたします。</p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <div class="t-eyebrow">コース・料金</div>
+    <div class="gold-rule"></div>
+    <h2 class="t-h2">料金のご案内</h2>
+
+    <div class="pricing__grid">
+      <div class="price-card reveal">
+        <div class="price-card__duration">60 MIN</div>
+        <div class="price-card__price">¥5,000</div>
+        <div class="price-card__unit">（税込）</div>
+        <div class="price-card__name">60分コース</div>
+        <div class="price-card__desc">お子さんの小児はり、短時間のケア、体調確認を兼ねた施術に。初めてのお子さんや、まずは短時間から試してみたい方にもおすすめです。</div>
+      </div>
+      <div class="price-card price-card--featured reveal reveal-delay-1">
+        <div class="price-card__tag">おすすめ</div>
+        <div class="price-card__duration">90 MIN</div>
+        <div class="price-card__price">¥7,000</div>
+        <div class="price-card__unit">（税込）</div>
+        <div class="price-card__name">90分コース</div>
+        <div class="price-card__desc">お子さん・保護者の方どちらにもおすすめの基本コース。保護者の鍼灸施術や、親子でのご相談を含む時間としてもおすすめです。</div>
+      </div>
+      <div class="price-card reveal reveal-delay-2">
+        <div class="price-card__duration">120 MIN</div>
+        <div class="price-card__price">¥10,000</div>
+        <div class="price-card__unit">（税込）</div>
+        <div class="price-card__name">120分コース</div>
+        <div class="price-card__desc">親子でのご来院や、施術と教育相談の両方を丁寧に受けたい方に。心身のケアと今後の見通しをゆっくり整理したい場合に適しています。</div>
+      </div>
+    </div>
+
+    <div class="pricing__note">
+      施術内容：小児はり、鍼灸施術、マッサージ（オイル有・無）、ハーブボールによるキリ温熱療法、教育相談の中から、当日のお身体の状態やご希望に応じてご提案いたします。
+    </div>
+
+    <!-- 月曜無料枠 -->
+    <div class="pricing__free reveal">
+      <div class="pricing__free-badge">月曜限定　初回無料</div>
+      <h3 class="pricing__free-title">初回無料 相談・体験枠</h3>
+      <p class="pricing__free-desc">
+        「いきなり施術は不安」「まずは話だけしてみたい」<br>
+        そんな方にも安心してご利用いただける時間です。<br>
+        末摩庵では、月曜日限定で初回無料のご相談・体験枠をご用意しました。
+      </p>
+      <div class="pricing__free-list">
+        <span class="pricing__free-item">月曜日限定</span>
+        <span class="pricing__free-item">初回の方のみ</span>
+        <span class="pricing__free-item">完全予約制</span>
+        <span class="pricing__free-item">親御さんのみのご相談も可</span>
+      </div>
+      <a href="#reservation" class="btn btn--gold">無料相談を申し込む</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section class="section profile" id="about">
+  <div class="container">
+    <div class="t-eyebrow">院長紹介</div>
+    <div class="gold-rule"></div>
+    <div class="profile__inner">
+      <div class="profile__photo-wrap reveal">
+        <div class="profile__photo">
+          <img
+            src="https://cdn.peraichi.com/userData/7a67c433-35cf-4596-8b2b-6c984f03bac7/img/206cec70-932b-4fe1-b1e1-d8e65e4347d6/IMG_9444.jpeg"
+            alt="院長 浦本諭"
+            onerror="this.style.display='none';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';"
+          >
+        </div>
+        <div class="profile__photo-caption">院長　浦本 諭（うらもと さとし）</div>
+      </div>
+      <div class="profile__content reveal reveal-delay-1">
+        <h2 class="profile__name">浦本 諭</h2>
+        <div class="profile__name-ruby">うらもと　さとし</div>
+        <div class="profile__licenses">
+          <span class="license-tag">はり師</span>
+          <span class="license-tag">きゅう師</span>
+          <span class="license-tag">あん摩マッサージ指圧師</span>
+          <span class="license-tag">教育学修士</span>
+        </div>
+        <p class="profile__story">
+          奈良女子大学文学部附属（幼稚園〜高校）という自由な校風の中で育ち、「教育とは自分の生き様を見せること」という信念を持つようになりました。奈良教育大学大学院を修了後、奈良県内の公立小学校に14年間勤務し、数多くの不登校児童と保護者の方と向き合ってきました。
+        </p>
+        <p class="profile__story">
+          管理職への昇進の話があったとき、第一子の誕生を前に安定を選ぶこともできました。しかし「一度きりの人生、これ以上自分を偽り続けるのは」という思いから退職を決意。鍼灸マッサージ師として第二の人生をスタートしました。
+        </p>
+        <p class="profile__story">
+          鍼灸師という立場は、教員時代に成し得なかった「本当の教育」を実践するのに適役だと直感しました。心と体の両面から子どもと家族に寄り添うことができる場として、生まれ育った奈良の地に末摩庵を開業しました。
+        </p>
+        <div class="profile__history">
+          <div class="history-row">
+            <span class="history-year">昭和53年</span>
+            <span class="history-text">奈良市生まれ</span>
+          </div>
+          <div class="history-row">
+            <span class="history-year">奈良女子大附属</span>
+            <span class="history-text">幼稚園〜高校を卒業</span>
+          </div>
+          <div class="history-row">
+            <span class="history-year">奈良教育大学</span>
+            <span class="history-text">大学院修了（教育学修士）</span>
+          </div>
+          <div class="history-row">
+            <span class="history-year">〜2017年</span>
+            <span class="history-text">奈良県内公立小学校に14年間勤務</span>
+          </div>
+          <div class="history-row">
+            <span class="history-year">資格取得後</span>
+            <span class="history-text">筑波技術大学附属 東西医学統合医療センター 研修生・非常勤職員</span>
+          </div>
+          <div class="history-row">
+            <span class="history-year">2024年4月</span>
+            <span class="history-text">奈良市にて「末摩庵」開業</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container" style="max-width:720px;">
+    <div class="t-eyebrow">よくあるご質問</div>
+    <div class="gold-rule"></div>
+    <h2 class="t-h2">FAQ</h2>
+    <div class="faq__list">
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q__mark">Q</span>
+          <span class="faq-q__text">メニューからどの施術を選べばいいか分かりません。</span>
+          <span class="faq-q__toggle"></span>
+        </div>
+        <div class="faq-a">当日お話を伺ってから、お身体の状態やご希望に合うメニューを相談して決められますのでご安心ください。まずはお気軽にご予約ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q__mark">Q</span>
+          <span class="faq-q__text">服装はどういったものがいいですか？</span>
+          <span class="faq-q__toggle"></span>
+        </div>
+        <div class="faq-a">施術中はゆとりのある薄着の状態が理想的です。上下のお着替えもご用意しておりますのでご安心ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q__mark">Q</span>
+          <span class="faq-q__text">子どもに受けさせたいのですが、行きたくないと言っています。</span>
+          <span class="faq-q__toggle"></span>
+        </div>
+        <div class="faq-a">お子さんが最初から一緒に来られるケースはむしろ稀です。まずは保護者様だけでもどうぞご来院ください。お話を伺いながら、お子さんに合ったペースで関わり方をご提案します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q__mark">Q</span>
+          <span class="faq-q__text">子どもは何歳から受けられますか？</span>
+          <span class="faq-q__toggle"></span>
+        </div>
+        <div class="faq-a">小児はりは生後数ヶ月から受けていただけます。刺さない鍼のため、痛みはほとんどなく、お子さんが怖がることも少ないです。年齢やお子さんの様子によって施術内容をご提案します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q__mark">Q</span>
+          <span class="faq-q__text">駐車場はありますか？</span>
+          <span class="faq-q__toggle"></span>
+        </div>
+        <div class="faq-a">当院専用の駐車場はございません。お車でお越しの際は、近隣のコインパーキングをご利用ください。近鉄奈良駅からは徒歩15分、育英学園バス停がすぐそばにございます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q__mark">Q</span>
+          <span class="faq-q__text">初回無料相談はどんな内容ですか？</span>
+          <span class="faq-q__toggle"></span>
+        </div>
+        <div class="faq-a">60分を目安に、現在のお子さんの状態や保護者の方のお困りごとをじっくりお聞きします。ご希望に応じて、体験施術も行います。まずは話すだけでも大丈夫です。完全予約制・月曜限定・初回の方のみとなります。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCESS ============ -->
+<section class="section access" id="access">
+  <div class="container">
+    <div class="t-eyebrow">アクセス</div>
+    <div class="gold-rule"></div>
+    <h2 class="t-h2">末摩庵へのアクセス</h2>
+    <div class="access__inner" style="margin-top:40px;">
+      <div class="access__map reveal">
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?q=%E3%81%AF%E3%82%8A%E3%83%BB%E3%81%8D%E3%82%85%E3%81%86%E3%83%BB%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8+%E6%9C%AB%E6%91%A9%E5%BA%B5+%E5%A5%88%E8%89%AF%E5%B8%82&language=ja&zoom=16&maptype=roadmap&key=AIzaSyCucBnVrKinLowf5-ChLoxp-jjWZ82TuTU"
+          allowfullscreen=""
+          loading="lazy"
+          title="末摩庵 地図">
+        </iframe>
+      </div>
+      <div class="access__info reveal reveal-delay-1">
+        <table class="access-table">
+          <tr>
+            <td>施術所名</td>
+            <td>はり・きゅう・マッサージ<br>末摩庵（まるまあん）</td>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <td>〒630-8113<br>奈良市法蓮町945-6</td>
+          </tr>
+          <tr>
+            <td>電話</td>
+            <td><a href="tel:090-8148-1315">090-8148-1315</a></td>
+          </tr>
+          <tr>
+            <td>開院日時</td>
+            <td>
+              <div class="hours-grid">
+                <span class="hours-day">土曜</span><span>14:00 〜 18:00</span>
+                <span class="hours-day">日・月曜</span><span>10:00 〜 18:00</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>アクセス</td>
+            <td>近鉄奈良駅より徒歩15分<br>育英学園バス停すぐ</td>
+          </tr>
+          <tr>
+            <td>駐車場</td>
+            <td>なし（近隣コインパーキングをご利用ください）</td>
+          </tr>
+          <tr>
+            <td>備考</td>
+            <td>路地裏にある古民家をリノベーションした隠れ家的な小さな治療院です。<br><strong style="color:var(--terracotta);font-weight:500;">完全予約制</strong></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESERVATION ============ -->
+<section class="section reservation" id="reservation">
+  <div class="container">
+    <div class="t-eyebrow">予約・お問い合わせ</div>
+    <div class="gold-rule"></div>
+    <h2 class="t-h2">ご予約・ご相談はこちらから</h2>
+    <p style="margin-top:12px;font-size:.85rem;font-weight:300;line-height:2;color:rgba(250,246,236,.6);letter-spacing:.04em;">
+      完全予約制です。以下のフォーム、お電話、または公式LINEよりお気軽にご連絡ください。
+    </p>
+
+    <div class="reservation__grid">
+      <div class="reservation__info reveal">
+        <h3>ご予約について</h3>
+        <p>完全予約制のため、当日のお越しはお受けできません。事前にご予約のうえご来院ください。</p>
+        <h3>月曜限定 初回無料枠</h3>
+        <p>初めてのご相談の方には、月曜日限定で無料の相談・体験枠をご用意しています。「まず話だけ聞きたい」という方もどうぞ。</p>
+        <h3>お問い合わせ方法</h3>
+        <div class="reservation__contact-links">
+          <a href="tel:090-8148-1315" class="contact-link">
+            <svg class="contact-link__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M4 4 Q3 6 5 10 Q7 14 10 16 Q14 18 16 17 L14 14 Q12 15 10 13 Q8 11 7 9 Q5 7 6 5Z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            電話で予約する　090-8148-1315
+          </a>
+          <a href="https://line.me" class="contact-link" target="_blank" rel="noopener">
+            <svg class="contact-link__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="2" y="4" width="16" height="12" rx="3"/>
+              <path d="M6 9 L9 9 M11 9 L14 9 M8 12 L12 12" stroke-linecap="round"/>
+            </svg>
+            公式LINEからメッセージ
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <form class="res-form" id="resForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">お名前<span class="req">*</span></label>
+              <input type="text" class="form-input" placeholder="山田 花子" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ふりがな</label>
+              <input type="text" class="form-input" placeholder="やまだ はなこ">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">電話番号<span class="req">*</span></label>
+            <input type="tel" class="form-input" placeholder="090-0000-0000" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">メールアドレス</label>
+            <input type="email" class="form-input" placeholder="example@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">ご希望の内容<span class="req">*</span></label>
+            <select class="form-select" required>
+              <option value="">選択してください</option>
+              <option>月曜限定・初回無料相談（無料）</option>
+              <option>60分コース（¥5,000）</option>
+              <option>90分コース（¥7,000）</option>
+              <option>120分コース（¥10,000）</option>
+              <option>その他・まずは相談したい</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">ご希望の日時（第1・第2希望）</label>
+            <input type="text" class="form-input" placeholder="例）6/23（月）10:00 / 6/30（月）14:00">
+          </div>
+          <div class="form-group">
+            <label class="form-label">ご相談内容・ご質問</label>
+            <textarea class="form-textarea" placeholder="お子さんの状況や、気になることをお書きください。親御さんのみのご相談も承ります。"></textarea>
+          </div>
+          <div class="form-note">
+            ※ご入力いただいた情報は施術・ご連絡のためにのみ使用します。<br>
+            ※2〜3営業日以内にご連絡いたします。お急ぎの場合はお電話ください。
+          </div>
+          <button type="submit" class="form-submit">送信する</button>
+          <div id="formMsg" style="display:none;margin-top:12px;text-align:center;font-size:.82rem;letter-spacing:.06em;color:var(--gold-lt);">
+            送信しました。2〜3営業日以内にご連絡いたします。
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINE BANNER -->
+<a href="https://line.me" class="line-banner" target="_blank" rel="noopener">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+    <rect x="2" y="5" width="20" height="14" rx="4" fill="white" opacity=".25"/>
+    <text x="12" y="16" text-anchor="middle" font-size="11" font-weight="bold" fill="white">LINE</text>
+  </svg>
+  <span class="line-banner__text">公式LINEからもお気軽にお問い合わせください</span>
+</a>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__logo">末摩庵（まるまあん）</div>
+      <div class="footer__addr">
+        はり・きゅう・マッサージ　末摩庵<br>
+        〒630-8113　奈良市法蓮町945-6<br>
+        TEL: 090-8148-1315<br>
+        開院：土 14:00〜18:00　日・月 10:00〜18:00（完全予約制）
+      </div>
+    </div>
+    <div class="footer__links">
+      <a href="#top">トップ</a>
+      <a href="#about">院長</a>
+      <a href="#services">施術</a>
+      <a href="#pricing">料金</a>
+      <a href="#reservation">予約</a>
+    </div>
+  </div>
+  <div class="footer__copy">
+    © 2024 はり・きゅう・マッサージ 末摩庵（まるまあん）All rights reserved.
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+  <a href="#reservation" class="floating-btn floating-btn--reserve">予約する</a>
+  <a href="tel:090-8148-1315" class="floating-btn floating-btn--line">電話する</a>
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+  document.getElementById('floatingCta').classList.toggle('visible', window.scrollY > 300);
+});
+
+// Mobile nav
+const toggle = document.getElementById('navToggle');
+const mobileNav = document.getElementById('navMobile');
+toggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('open');
+});
+function closeMobileNav() {
+  mobileNav.classList.remove('open');
+}
+
+// Tabs
+function switchTab(id, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+// Form submit (demo - shows success message)
+function handleFormSubmit(e) {
+  e.preventDefault();
+  document.getElementById('formMsg').style.display = 'block';
+  e.target.querySelector('.form-submit').textContent = '送信完了';
+  e.target.querySelector('.form-submit').style.background = 'rgba(255,255,255,.15)';
+  e.target.querySelector('.form-submit').disabled = true;
+}
+</script>
+</body>
+</html>

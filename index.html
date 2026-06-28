@@ -1818,53 +1818,25 @@ ul { list-style: none; }
       </div>
 
       <div class="reveal reveal-delay-1">
-        <form class="res-form" id="resForm" onsubmit="handleFormSubmit(event)">
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label">お名前<span class="req">*</span></label>
-              <input type="text" class="form-input" placeholder="山田 花子" required>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="border:1px solid rgba(255,255,255,.12);padding:28px 24px;background:rgba(255,255,255,.04);">
+            <div style="font-family:var(--serif);font-size:.9rem;font-weight:400;letter-spacing:.12em;color:var(--gold-lt);margin-bottom:16px;">オンラインフォームから予約する</div>
+            <p style="font-size:.82rem;font-weight:300;line-height:2;color:rgba(250,246,236,.65);letter-spacing:.04em;margin-bottom:24px;">
+              以下のボタンからGoogleフォームにてご予約・お問い合わせいただけます。<br>
+              2〜3営業日以内にご連絡いたします。
+            </p>
+            <a href="https://forms.gle/8XbtMWEUUsgCbyaB8" target="_blank" rel="noopener" class="btn btn--gold" style="display:inline-flex;width:100%;justify-content:center;font-size:.85rem;padding:16px;">
+              予約フォームを開く
+            </a>
+          </div>
+          <div style="border:1px solid rgba(255,255,255,.08);padding:20px 24px;background:rgba(255,255,255,.02);">
+            <div style="font-size:.72rem;font-weight:300;line-height:2.2;color:rgba(250,246,236,.45);letter-spacing:.06em;">
+              ※完全予約制のため、当日のお越しはお受けできません。<br>
+              ※お急ぎの場合はお電話（090-8148-1315）にてご連絡ください。<br>
+              ※ご入力いただいた情報は施術・ご連絡のためにのみ使用します。
             </div>
-            <div class="form-group">
-              <label class="form-label">ふりがな</label>
-              <input type="text" class="form-input" placeholder="やまだ はなこ">
-            </div>
           </div>
-          <div class="form-group">
-            <label class="form-label">電話番号<span class="req">*</span></label>
-            <input type="tel" class="form-input" placeholder="090-0000-0000" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">メールアドレス</label>
-            <input type="email" class="form-input" placeholder="example@email.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label">ご希望の内容<span class="req">*</span></label>
-            <select class="form-select" required>
-              <option value="">選択してください</option>
-              <option>月曜限定・初回無料相談（無料）</option>
-              <option>60分コース（¥5,000）</option>
-              <option>90分コース（¥7,000）</option>
-              <option>120分コース（¥10,000）</option>
-              <option>その他・まずは相談したい</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">ご希望の日時（第1・第2希望）</label>
-            <input type="text" class="form-input" placeholder="例）6/23（月）10:00 / 6/30（月）14:00">
-          </div>
-          <div class="form-group">
-            <label class="form-label">ご相談内容・ご質問</label>
-            <textarea class="form-textarea" placeholder="お子さんの状況や、気になることをお書きください。親御さんのみのご相談も承ります。"></textarea>
-          </div>
-          <div class="form-note">
-            ※ご入力いただいた情報は施術・ご連絡のためにのみ使用します。<br>
-            ※2〜3営業日以内にご連絡いたします。お急ぎの場合はお電話ください。
-          </div>
-          <button type="submit" class="form-submit">送信する</button>
-          <div id="formMsg" style="display:none;margin-top:12px;text-align:center;font-size:.82rem;letter-spacing:.06em;color:var(--gold-lt);">
-            送信しました。2〜3営業日以内にご連絡いたします。
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>

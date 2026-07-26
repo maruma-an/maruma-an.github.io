@@ -9,7 +9,6 @@
 <meta property="og:description" content="学校に行きづらさを抱えるお子さんと保護者のための、奈良の小さな専門院。元小学校教諭の院長が心と体の両面からサポートします。">
 <meta property="og:type" content="website">
 <meta name="google-site-verification" content="SJuhv12Bum1qo3ro73NGXnjo8P_8IbOrXP6QHoPy754" />
-
 <title>末摩庵（まるまあん）｜はり・きゅう・マッサージ 奈良市</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -505,6 +504,7 @@ ul { list-style: none; }
   margin-top: 48px;
 }
 .service-card {
+  min-width: 0;
   background: var(--cream-mid);
   padding: 28px 22px;
   border-top: 2px solid var(--cream-dk);
@@ -1209,6 +1209,16 @@ ul { list-style: none; }
   .floating-cta { bottom: 16px; right: 12px; }
 }
 
+/* Prevent grid items from overflowing on narrow screens */
+.services__grid > *,
+.concepts__grid > *,
+.pricing__grid > *,
+.menu__grid > *,
+.tab-content__grid > *,
+.symptom-list > * {
+  min-width: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
@@ -1645,7 +1655,6 @@ ul { list-style: none; }
         <p class="profile__story">
           心と体の両面から子どもと家族に寄り添うことができる場として、生まれ育った奈良の地に末摩庵を開業しました。
         </p>
-
         <div class="profile__history">
           <div class="history-row">
             <span class="history-year">昭和53年</span>

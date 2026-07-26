@@ -227,7 +227,7 @@ ul { list-style: none; }
 .hero {
   min-height: 100svh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   padding-top: 72px;
   overflow: hidden;
 }
@@ -359,7 +359,7 @@ ul { list-style: none; }
 }
 .concepts__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: rgba(255,255,255,.12);
 }
@@ -413,7 +413,7 @@ ul { list-style: none; }
 ============================================ */
 .philosophy__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(40px, 6vw, 80px);
   align-items: center;
 }
@@ -474,13 +474,13 @@ ul { list-style: none; }
 .tab-content.active { display: block; }
 .tab-content__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(24px, 4vw, 48px);
   align-items: center;
 }
 .symptom-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
   margin-top: 24px;
 }
@@ -499,7 +499,7 @@ ul { list-style: none; }
 ============================================ */
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   margin-top: 48px;
 }
@@ -543,7 +543,7 @@ ul { list-style: none; }
 .pricing .t-h2 { color: var(--cream); }
 .pricing__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2px;
   margin-top: 48px;
   background: rgba(255,255,255,.06);
@@ -680,7 +680,7 @@ ul { list-style: none; }
 ============================================ */
 .menu__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   background: var(--cream-dk);
   margin-top: 40px;
@@ -885,7 +885,7 @@ ul { list-style: none; }
 .access { background: var(--cream-mid); }
 .access__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 64px);
   align-items: start;
 }
@@ -948,7 +948,7 @@ ul { list-style: none; }
 
 .reservation__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(40px, 6vw, 80px);
   margin-top: 48px;
 }
@@ -1023,7 +1023,7 @@ ul { list-style: none; }
 .form-select { cursor: pointer; }
 .form-select option { background: #2a3d18; color: var(--cream); }
 .form-textarea { resize: vertical; min-height: 100px; }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
 .form-note {
   font-size: .72rem;
   letter-spacing: .06em;
@@ -1184,28 +1184,28 @@ ul { list-style: none; }
    RESPONSIVE
 ============================================ */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
   .hero__image { min-height: 340px; order: -1; }
-  .concepts__grid { grid-template-columns: 1fr; }
-  .philosophy__inner { grid-template-columns: 1fr; }
+  .concepts__grid { grid-template-columns: minmax(0, 1fr); }
+  .philosophy__inner { grid-template-columns: minmax(0, 1fr); }
   .philosophy__visual { aspect-ratio: 16/9; }
-  .tab-content__grid { grid-template-columns: 1fr; }
-  .services__grid { grid-template-columns: 1fr 1fr; }
-  .pricing__grid { grid-template-columns: 1fr; }
-  .profile__inner { grid-template-columns: 1fr; }
+  .tab-content__grid { grid-template-columns: minmax(0, 1fr); }
+  .services__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .pricing__grid { grid-template-columns: minmax(0, 1fr); }
+  .profile__inner { grid-template-columns: minmax(0, 1fr); }
   .profile__photo { max-width: 280px; }
-  .access__inner { grid-template-columns: 1fr; }
-  .reservation__grid { grid-template-columns: 1fr; }
-  .menu__grid { grid-template-columns: 1fr; }
+  .access__inner { grid-template-columns: minmax(0, 1fr); }
+  .reservation__grid { grid-template-columns: minmax(0, 1fr); }
+  .menu__grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 640px) {
   .nav__links { display: none; }
   .nav__toggle { display: flex; }
-  .services__grid { grid-template-columns: 1fr; }
-  .symptom-list { grid-template-columns: 1fr; }
-  .form-grid { grid-template-columns: 1fr; }
-  .footer__inner { grid-template-columns: 1fr; }
+  .services__grid { grid-template-columns: minmax(0, 1fr); }
+  .symptom-list { grid-template-columns: minmax(0, 1fr); }
+  .form-grid { grid-template-columns: minmax(0, 1fr); }
+  .footer__inner { grid-template-columns: minmax(0, 1fr); }
   .floating-cta { bottom: 16px; right: 12px; }
 }
 
